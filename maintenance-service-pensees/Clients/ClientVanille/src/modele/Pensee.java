@@ -6,8 +6,16 @@ public class Pensee {
 	protected String auteur;
 	protected String message;
 	protected int annee;
-	
-	
+	protected String source;
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
 	public Pensee(String auteur, String message) {
 		super();
 		this.auteur = auteur;

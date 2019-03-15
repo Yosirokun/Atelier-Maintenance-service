@@ -10,15 +10,16 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="728.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ControleurInspirationVisuelle">
     <children>
         <BorderPane layoutX="164.0" layoutY="39.0" prefHeight="500.0" prefWidth="364.0">
-            <bottom>
-                <Button mnemonicParsing="false" onAction="#trouverInspiration" prefWidth="364.0" text="Trouver une inspiration" />
-            </bottom>
+            <top>
+                <TextArea prefHeight="67.0" prefWidth="364.0" style="-fx-font-size: 40pt;&#10;-fx-font-weight:bold;&#10;-fx-text-fill:brown;"
+                          text="Pensée du jour" wrapText="true" />
+            </top>
             <center>
                 <TextArea id="listePensees" prefHeight="400.0" prefWidth="200.0" style=" -fx-border-color: brown ;  &#10; -fx-border-width: 2px ;  &#10;-fx-control-inner-background: orange;" wrapText="true" />
             </center>
-            <top>
-                <TextArea prefHeight="67.0" prefWidth="364.0" style="-fx-font-size: 40pt;&#10;-fx-font-weight:bold;&#10;-fx-text-fill:brown;" text="Pensée du jour" wrapText="true" />
-            </top>
+            <bottom>
+                <Button mnemonicParsing="false" onAction="#trouverInspiration" prefWidth="364.0" text="Trouver une inspiration" />
+            </bottom>
         </BorderPane>
     </children>
 </AnchorPane>
