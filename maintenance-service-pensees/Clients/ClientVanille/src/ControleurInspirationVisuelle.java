@@ -23,21 +23,24 @@ public class ControleurInspirationVisuelle  implements Initializable {
     @FXML protected void trouverInspiration(ActionEvent evenement) {
 
         System.out.println("trouverInspiration( )");
+        Pensee pensee = penseeDAO.chargerPenseeAleatoire();
+        VueInspirationVisuelle.getInstance().afficherPensee(pensee);
 
         // Singleton obligatoire car le framework de JavaFX cache l'instance
         //VueInspirationVisuelle.getInstance().ecrireUnMessage("allo");
     }
     public void initialiser()
     {
-        List<Pensee> listePensees = penseeDAO.listerPensees();
+        //List<Pensee> listePensees = penseeDAO.listerPensees();
+        Pensee pensee = penseeDAO.chargerPenseeAleatoire();
 
         //for(Iterator<Pensee> visiteur = listePensees.iterator(); visiteur.hasNext(); )
         //{
         //	Pensee pensee = visiteur.next();
         //	Journal.ecrire(5, pensee.getMessage() + "(" + pensee.getAuteur() + ")");
         //}
-        VueInspirationVisuelle.getInstance().afficherListePensees(listePensees);
-
+        //VueInspirationVisuelle.getInstance().afficherListePensees(listePensees);
+        VueInspirationVisuelle.getInstance().afficherPensee(pensee);
     }
 
     @Override
