@@ -41,7 +41,17 @@ public class PenseeDAO implements PenseeURL{
 		
 		return decodeur.decoderListe(xml);
 	}
-	
+/*
+	function trouverPensees(numero)
+	{
+		$SQL_TROUVER_PENSEE = "SELECT * FROM pensee WHERE id = $numero";
+		global $basededonnees;
+		$requeteListerPensees = $basededonnees->prepare($SQL_TROUVER_PENSEE);
+		$requetePensees->execute();
+		return $requetePensee->fetch(PDO::FETCH_OBJ);
+	}
+	*/
+
 	public void ajouterPensee(Pensee pensee)
 	{
 		Journal.ecrire(1, "ajouterPensee()");			
@@ -62,7 +72,7 @@ public class PenseeDAO implements PenseeURL{
 			envoyeur.close();
 			
 			int codeReponse = connection.getResponseCode();
-			Journal.ecrire(2, "Code de réponse " + codeReponse);
+			Journal.ecrire(2, "Code de rï¿½ponse " + codeReponse);
 			
 			InputStream fluxLecture = connection.getInputStream();
 			Scanner lecteur = new Scanner(fluxLecture);
@@ -87,12 +97,12 @@ public class PenseeDAO implements PenseeURL{
 /*
  * 
  
-Code de réponse 200
+Code de rï¿½ponse 200
 ajouterPensee()
 stdClass Object
 (
     [auteur] => Rossetti
-    [message] => Ce qui est plus triste qu’une œuvre inachevée, c’est une œuvre jamais commencée.
+    [message] => Ce qui est plus triste quï¿½une ï¿½uvre inachevï¿½e, cï¿½est une ï¿½uvre jamais commencï¿½e.
     [annee] => 0
 )
 <?xml version="1.0" encoding="UTF-8"?><action>
@@ -102,7 +112,7 @@ stdClass Object
 	<message>POST : Array
 (
     [auteur] => Rossetti
-    [message] => Ce qui est plus triste qu’une œuvre inachevée, c’est une œuvre jamais commencée.
+    [message] => Ce qui est plus triste quï¿½une ï¿½uvre inachevï¿½e, cï¿½est une ï¿½uvre jamais commencï¿½e.
     [annee] => 0
 )
 </message>
