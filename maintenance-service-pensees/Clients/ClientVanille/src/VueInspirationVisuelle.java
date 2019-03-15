@@ -25,7 +25,18 @@ public class VueInspirationVisuelle extends Application {
         scene = new Scene(racine, 800, 600);
         stade.setScene(scene);
         stade.show();
+        ControleurInspirationVisuelle.getInstance().initialiser();
+
     }
+
+    public void afficherListePensees()
+    {
+        System.out.println("afficherListePensees()");
+        TextArea champsMessage = (TextArea) scene.lookup("#listePensees");
+        champsMessage.setText("test");
+    }
+
+
 
 
 }
