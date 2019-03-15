@@ -7,6 +7,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modele.Pensee;
+import outils.Journal;
+
+
+import java.util.Iterator;
+import java.util.List;
 
 public class VueInspirationVisuelle extends Application {
     public VueInspirationVisuelle()
@@ -29,11 +35,17 @@ public class VueInspirationVisuelle extends Application {
 
     }
 
-    public void afficherListePensees()
+    public void afficherListePensees(List<Pensee> listePensees)
     {
         System.out.println("afficherListePensees()");
         TextArea champsMessage = (TextArea) scene.lookup("#listePensees");
-        champsMessage.setText("test");
+        for(Iterator<Pensee> visiteur = listePensees.iterator(); visiteur.hasNext(); )
+        {
+            Pensee pensee = visiteur.next();
+            String touteLaPensee = pensee.getMessage() + "(" + pensee.getAuteur() + ")";
+            champsMessage.setText(champsMessage.getText() + "\n" + touteLaPensee);
+            Journal.ecrire(5, touteLaPensee);
+        }
     }
 
 
