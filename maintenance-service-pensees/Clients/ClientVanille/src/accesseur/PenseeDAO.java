@@ -41,7 +41,8 @@ public class PenseeDAO implements PenseeURL{
 		
 		return decodeur.decoderListe(xml);
 	}
-/*
+	protected accesseur.cache.PenseeDAO cachePenseeDAO = new accesseur.cache.PenseeDAO();
+	/*
 	function trouverPensees(numero)
 	{
 		$SQL_TROUVER_PENSEE = "SELECT * FROM pensee WHERE id = $numero";
@@ -73,7 +74,13 @@ public class PenseeDAO implements PenseeURL{
 
 		if(null == xml) return null;
 
-		return decodeur.decoderPensee(xml);
+		// Debut maintenance pour caching par NG
+		Pensee pensee = decodeur.decoderPensee(xml);
+		cachePenseeDAO.enregistrerPensee(pensee);
+		// Fin maintenance pour caching par NG
+
+		return pensee;
+
 	}
 
 	public void ajouterPensee(Pensee pensee)
