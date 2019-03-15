@@ -16,7 +16,7 @@
 			echo "ajouterPensee()";
 			print_r($pensee);
 			
-			$SQL_AJOUTER_PENSEE = "INSERT into pensee(auteur, message, annee) VALUES('$pensee->auteur','$pensee->message','$pensee->annee')";
+			$SQL_AJOUTER_PENSEE = "INSERT into pensee(auteur, message, annee, source) VALUES('$pensee->auteur','$pensee->message','$pensee->annee','$pensee->source')";
 			
 			echo $SQL_AJOUTER_PENSEE;
 			global $basededonnees;

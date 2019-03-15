@@ -12,6 +12,7 @@
 	$pensee->auteur = $penseeTableau['auteur'];
 	$pensee->message = $penseeTableau['message'];
 	$pensee->annee = $penseeTableau['annee'];
+	$pensee->source = $penseeTableau['source'];
 	
 	$succes = $penseeDAO->ajouterPensee($pensee);
 ?><?php 
